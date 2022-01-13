@@ -3,8 +3,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 const fs = require("fs");
 const { rewrite } = require("./rewrite");
+const cors = require('cors');
 
 const json = fs.readFileSync("./tokenAvailable.json", "utf-8");
+
+app.use(cors());
 
 app.use(express.static("./"));
 
