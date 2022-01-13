@@ -5,7 +5,13 @@ const fs = require("fs");
 const { rewrite } = require("./rewrite");
 const cors = require("cors");
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://bantumasyarakat.github.io/landing_page_promo',
+  optionsSuccessStatus: 200,
+}
+
+
+app.use(cors(corsOptions));
 
 const json = fs.readFileSync("./tokenAvailable.json", "utf-8");
 
